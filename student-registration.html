@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Online Course Registration System</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="course-search.html">Course Search</a>
+      <a href="student-registration.html">Student Registration</a>
+      <a href="instructor-schedule.html">Instructor Schedule</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Student Registration</h2>
+
+    <!-- Fake Login -->
+    <div>
+      <label for="studentId">Student ID</label><br>
+      <input type="text" id="studentId" placeholder="Enter Student ID">
+      <br><br>
+      <button class="btn" type="button">Login</button>
+    </div>
+
+    <hr><br>
+
+    <!-- Enrolled Sessions -->
+    <h3>Currently Enrolled Sessions</h3>
+    <ul id="enrolledList">
+      <li>CS101 – Introduction to Programming</li>
+    </ul>
+
+    <br>
+
+    <!-- Register New Session -->
+    <h3>Register for a New Session</h3>
+
+    <label for="newCourse">Select Course</label><br>
+    <select id="newCourse">
+      <option value="CS101">CS101 – Introduction to Programming</option>
+      <option value="CS102">CS102 – Data Structures</option>
+    </select>
+
+    <br><br>
+
+    <button class="btn" type="button" onclick="registerCourse()">Register</button>
+  </main>
+
+  <script>
+    function registerCourse() {
+      const selectedCourse = document.getElementById("newCourse").value;
+      const enrolledList = document.getElementById("enrolledList");
+      const enrolledItems = enrolledList.getElementsByTagName("li");
+
+      // Check for duplicate registration
+      for (let i = 0; i < enrolledItems.length; i++) {
+        if (enrolledItems[i].textContent.includes(selectedCourse)) {
+          alert("You are already enrolled in this course.");
+          return;
+        }
+      }
+
+      // Simulate max enrollment check
+      if (selectedCourse === "CS102") {
+        alert("This course has reached maximum enrollment.");
+        return;
+      }
+
+      // Register course
+      const newItem = document.createElement("li");
+      newItem.textContent =
+        selectedCourse === "CS101"
+          ? "CS101 – Introduction to Programming"
+          : "CS102 – Data Structures";
+
+      enrolledList.appendChild(newItem);
+      alert("Registration successful!");
+    }
+  </script>
+
+</body>
+</html>

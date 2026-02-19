@@ -1,0 +1,85 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Course Search</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Online Course Registration System</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="course-search.html">Course Search</a>
+      <a href="student-registration.html">Student Registration</a>
+      <a href="instructor-schedule.html">Instructor Schedule</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Course Search</h2>
+
+    <p>Search for courses by department, instructor, or course number.</p>
+
+    <form>
+      <div>
+        <label for="department">Department</label><br>
+        <select id="department">
+          <option>Computer Science</option>
+          <option>Mathematics</option>
+          <option>Business</option>
+        </select>
+      </div>
+
+      <br>
+
+      <div>
+        <label for="instructor">Instructor</label><br>
+        <input type="text" id="instructor" placeholder="Instructor name">
+      </div>
+
+      <br>
+
+      <div>
+        <label for="courseNumber">Course Number</label><br>
+        <input type="text" id="courseNumber" placeholder="e.g. CS101">
+      </div>
+
+      <br>
+
+      <button type="button" class="btn">Search</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Course</th>
+          <th>Credits</th>
+          <th>Prerequisites</th>
+          <th>Modality</th>
+          <th>Max Enrollment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CS101 – Introduction to Programming</td>
+          <td>3</td>
+          <td>None</td>
+          <td>In-Person</td>
+          <td>30</td>
+        </tr>
+        <tr>
+          <td>CS102 – Data Structures</td>
+          <td>4</td>
+          <td>CS101</td>
+          <td>Online</td>
+          <td>25</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </main>
+
+</body>
+</html>
